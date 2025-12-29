@@ -9,6 +9,7 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
 ![Screenshot](screenshots/second.png)
 ![Screenshot](screenshots/third.png)
 ![Screenshot](screenshots/fourth.png)
+![Screenshot](screenshots/fifth.png)
 
 ## [Live Demo](https://resume-builder-ruby-omega.vercel.app/)
 
@@ -228,6 +229,7 @@ Contributions are welcome! Here's how you can help:
 
 
    
+
 
 
 
