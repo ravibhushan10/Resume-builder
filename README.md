@@ -2,17 +2,19 @@
 
 A modern, full-stack resume builder application with real-time preview, PDF export, and cloud storage. Built with React, Redux, and Node.js for a seamless resume creation experience.
 
----
 
-## 🌟 Live Demo
+## 📸 Screenshots
+![Screenshot](screenshots/front.png)
+![Screenshot](screenshots/first.png)
+![Screenshot](screenshots/second.png)
+![Screenshot](screenshots/third.png)
+![Screenshot](screenshots/fourth.png)
 
-**👉 [Try it now](https://resume-builder-ruby-omega.vercel.app/)**
+## [Live Demo](https://resume-builder-ruby-omega.vercel.app/)
 
----
+##  🌟Features
 
-## ✨ Features
-
-### 🎨 **Modern UI/UX**
+###  🫰**Modern UI/UX**
 - Clean and intuitive interface
 - Real-time resume preview
 - Responsive design for all devices
@@ -51,11 +53,10 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
 - Middleware for authentication
 - File upload handling
 
----
 
-## 🛠️ Tech Stack
-
-### Frontend (Client)
+## 🛠️ Technologies used
+   
+###Frontend (Client)
 | Technology | Purpose | Version |
 |------------|---------|---------|
 | React | UI Framework | 18+ |
@@ -74,7 +75,6 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
 | Mongoose | ODM | Latest |
 | JWT | Authentication | - |
 
-
 ### DevOps & Tools
 | Tool | Purpose |
 |------|---------|
@@ -83,39 +83,8 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
 | ESLint | Code Linting |
 | Vite | Development Server |
 
----
-
-
-
----
 
 ## 🚀 Getting Started
-
-
-### Environment Setup
-
-#### Client Environment Variables
-
-Create `.env` file in `client/` directory:
-
-```env
-VITE_SERVER_URL="your backend url"
-```
-
-#### Server Environment Variables
-
-Create `.env` file in `server/` directory:
-
-```env
-PORT="Your port number"
-ORIGIN="your frontend url"
-IMAGEKIT_ID="your image kit id"
-PUBLIC_KEY="your public key of image kit"
-PRIVATE_KEY="your private key of image kit"
-JWT_SECRET="JWT secret key"
-MONGO_URI="Database url"
-
-```
 
 ### Installation Steps
 
@@ -137,27 +106,36 @@ MONGO_URI="Database url"
    npm install
    ```
 
-4. **Setup MongoDB**
-   ```bash
-   # Make sure MongoDB is running
+4. **Client Environment Variables : Create `.env` file in `client/` root directory fill all the values of variables**
+   ```env
+   VITE_SERVER_URL="your backend url"
    ```
 
-5. **Start the Server**
+
+
+5. **Server Environment Variables : Create `.env` file in `server/` root directory and fill all the values of variables**
+   ```env
+   PORT="Your port number"
+   ORIGIN="your frontend url"
+   IMAGEKIT_ID="your image kit id"
+   PUBLIC_KEY="your public key of image kit"
+   PRIVATE_KEY="your private key of image kit"
+   JWT_SECRET="JWT secret key"
+   MONGO_URI="Database url"
+   ```
+6. **Start the Server**
    ```bash
    cd server
-   npm run dev
-   # Server will run on http://localhost:5000
+   npm start
+   Server will run on http://localhost:5000
    ```
 
-6. **Start the Client** (in a new terminal)
+7. **Start the Client** (in a new terminal)
    ```bash
    cd client
    npm run dev
-   # Client will run on http://localhost:5173
-   ```
+   Client will run on http://localhost:5173
 
-
----
 
 ## 📖 Usage Guide
 
@@ -191,92 +169,75 @@ MONGO_URI="Database url"
    - Share via unique link
    - Print directly
 
----
-
-## 🎯 Key Features Breakdown
-
-| Feature | Description | Status |
-|---------|-------------|--------|
-| User Authentication | JWT-based auth with refresh tokens | ✅ |
-| Multiple Resumes | Create & manage multiple resumes | ✅ |
-| Template Selection | Choose from various templates | ✅ |
-| Real-time Preview | See changes instantly | ✅ |
-| PDF Export | High-quality PDF generation | ✅ |
-| Cloud Storage | MongoDB-based data storage | ✅ |
-| File Upload | Avatar & document uploads | ✅ |
-| Responsive Design | Works on all devices | ✅ |
-| Redux State | Centralized state management | ✅ |
-| Context API | Theme & settings management | ✅ |
-| Auto-save | Never lose your progress | ✅ |
-
----
-
-
-
-
-
-
-
----
-
-## 🔒 Security Features
-
-- JWT-based authentication
-- Password hashing with bcrypt
-- Protected routes with middleware
-- Input validation and sanitization
-- CORS configuration
-
----
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these steps:
+Contributions are welcome! Here's how you can help:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. **Fork the repository**
+2. **Create a feature branch**
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+3. **Commit your changes**
+   ```bash
+   git commit -m 'Add some AmazingFeature'
+   ```
+4. **Push to the branch**
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
 
-
-
-
-
-
-
-
-
-
-
----
-
+   
 ## 👨‍💻 Author
-
 **Ravi Bhushan**
-
-- GitHub: [@ravibhushan10](https://github.com/ravibhushan10)
-- Portfolio: [Your Portfolio](https://ravibhushan-portfolio.vercel.app)
 - LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/ravibhushan-kumar-55b312344/)
+- Portfolio: [Your Portfolio](https://ravibhushan-portfolio.vercel.app)
+- GitHub: [@ravibhushan10](https://github.com/ravibhushan10)
 - Email: ravibhushankumar87tp@gmail.com
 
 ---
-
-
-
-
----
-
 <div align="center">
-
+   
 ### ⭐ Star this repository if it helped you!
-
 **Made with ❤️ by Ravi Bhushan**
-
+   
+   
 [Live Demo](https://resume-builder-ruby-omega.vercel.app/) · [Report Bug](https://github.com/ravibhushan10/Resume-builder/issues) · [Request Feature](https://github.com/ravibhushan10/Resume-builder/issues)
 
+</div>
+
 ---
 
-**Happy Resume Building! 🚀**
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
