@@ -5,12 +5,20 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
 
 ## 📸 Screenshots
 
-  <img src="screenshots/front.png" alt="Landing Page" width="80%">
-  <img src="screenshots/first.png" alt="Builder Interface" width="50%">
-  <img src="screenshots/second.png" alt="Form Section" width="50%">
-  <img src="screenshots/third.png" alt="Features" width="80%">
-  <img src="screenshots/fourth.png" alt="Templates" width="80%">
-  <img src="screenshots/fifth.png" alt="Preview" width="80%">
+<div align="center">
+  <img src="screenshots/front.png" alt="project image" width="400"/>
+  <p><em>Home Page</em></p>
+  <img src="screenshots/first.png" alt="project image" width="400"/>
+   <p><em>Home Page</em></p>
+   <img src="screenshots/second.png" alt="project image" width="400"/>
+    <p><em>Home Page</em></p>
+    <img src="screenshots/third.png" alt="project image" width="400"/>
+     <p><em>Home Page</em></p>
+     <img src="screenshots/fourth.png" alt="project image" width="400"/>
+      <p><em>Home Page</em></p>
+  <img src="screenshots/fifth.png" alt="project image" width="400"/>
+   <p><em>Home Page</em></p> 
+</div>
 
 
 ## [Live Demo](https://resume-builder-ruby-omega.vercel.app/)
@@ -268,6 +276,7 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
 
 
    
+
 
 
 
