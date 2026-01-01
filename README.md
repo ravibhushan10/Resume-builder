@@ -5,20 +5,41 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
 
 ## 📸 Screenshots
 
-<div align="center">
-  <img src="screenshots/front.png" alt="project image" width="400"/>
-  <p><em>Home Page</em></p>
-  <img src="screenshots/first.png" alt="project image" width="400"/>
-   <p><em>Home Page</em></p>
-   <img src="screenshots/second.png" alt="project image" width="400"/>
-    <p><em>Home Page</em></p>
-    <img src="screenshots/third.png" alt="project image" width="400"/>
-     <p><em>Home Page</em></p>
-     <img src="screenshots/fourth.png" alt="project image" width="400"/>
-      <p><em>Home Page</em></p>
-  <img src="screenshots/fifth.png" alt="project image" width="400"/>
-   <p><em>Home Page</em></p> 
-</div>
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="screenshots/fornt.png" ><br/>
+      <em>Home Page</em>
+    </td>
+    <td align="center">
+      <img src="screenshots/first.png" ><br/>
+      <em>Sign up section</em>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+      <img src="screenshots/second.png" ><br/>
+      <em>Login section</em>
+    </td>
+    <td align="center">
+      <img src="screenshots/third.png"><br/>
+      <em>Toggle theme</em>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+      <img src="screenshots/fourth.png" ><br/>
+      <em>Resume creation</em>
+    </td>
+     <td align="center">
+      <img src="screenshots/fifth.png" ><br/>
+      <em>Download Resume</em>
+    </td>
+  </tr>
+  
+</table>
 
 
 ## [Live Demo](https://resume-builder-ruby-omega.vercel.app/)
@@ -269,6 +290,7 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
 
 
    
+
 
 
 
