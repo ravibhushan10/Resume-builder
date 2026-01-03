@@ -5,20 +5,41 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
 
 ## 📸 Screenshots
 
-<div align="center">
-  <img src="screenshots/front.png" alt="project image" width="400"/>
-  <p><em>Home Page</em></p>
-  <img src="screenshots/first.png" alt="project image" width="400"/>
-   <p><em>Home Page</em></p>
-   <img src="screenshots/second.png" alt="project image" width="400"/>
-    <p><em>Home Page</em></p>
-    <img src="screenshots/third.png" alt="project image" width="400"/>
-     <p><em>Home Page</em></p>
-     <img src="screenshots/fourth.png" alt="project image" width="400"/>
-      <p><em>Home Page</em></p>
-  <img src="screenshots/fifth.png" alt="project image" width="400"/>
-   <p><em>Home Page</em></p> 
-</div>
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="screenshots/fornt.png" ><br/>
+      <em>Home Page</em>
+    </td>
+    <td align="center">
+      <img src="screenshots/first.png" ><br/>
+      <em>Sign up section</em>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+      <img src="screenshots/second.png" ><br/>
+      <em>Login section</em>
+    </td>
+    <td align="center">
+      <img src="screenshots/third.png"><br/>
+      <em>Toggle theme</em>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+      <img src="screenshots/fourth.png" ><br/>
+      <em>Resume creation</em>
+    </td>
+     <td align="center">
+      <img src="screenshots/fifth.png" ><br/>
+      <em>Download Resume</em>
+    </td>
+  </tr>
+  
+</table>
 
 
 ## [Live Demo](https://resume-builder-ruby-omega.vercel.app/)
@@ -217,24 +238,17 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
 ```
 
 7. **Open a Pull Request**
-   - Go to your forked repository on GitHub (https://github.com/YOUR-USERNAME/Resume-builder)
-   - You'll see a yellow banner saying **"Compare & pull request"** - click it
-     - If you don't see the banner, click the **"Contribute"** button, then **"Open pull request"**
-   - You'll be taken to the original repository's PR page
-   - GitHub will automatically compare your branch with the main repository
-   - Fill in the Pull Request form:
-     - **Title**: Brief summary (e.g., "Add dark mode toggle feature")
+   - Go to your forked repository on GitHub
+   - Click **"Compare & pull request"**
+   - Fill in the PR form:
+     - **Title**: Brief summary (e.g., "Add password strength indicator")
      - **Description**: Explain your changes clearly:
        - What changes you made
        - Why you made them
        - Screenshots (if UI changes)
        - Related issue numbers (e.g., "Fixes #123")
    - Click **"Create pull request"**
-   - Wait for review - the maintainer will review your PR and may:
-     - Approve and merge it ✅
-     - Request changes or improvements
-     - Ask questions or provide feedback
-   - Be patient and responsive to any feedback!
+   - Wait for review and be responsive to feedback
 
    
 ## 👨‍💻 Author
@@ -276,6 +290,8 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
 
 
    
+
+
 
 
 
