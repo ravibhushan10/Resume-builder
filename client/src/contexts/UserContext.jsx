@@ -1,34 +1,41 @@
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useContext, useEffect, useState } from "react";
 
-const UserContext = createContext(undefined)
+const UserContext = createContext(undefined);
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
-  useEffect(()=>{
-    const fetchUser = async() => {
-      try{
-      const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/user/profile`,{
-        credentials:'include'
-      })
-      const data = await res.json();
-      if(res.ok){
-        setUser(data)
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const res = await fetch(
+          `${import.meta.env.VITE_SERVER_URL}/api/user/profile`,
+          {
+            credentials: "include",
+          }
+        );
+        const data = await res.json();
+        if (res.ok) {
+          setUser(data);
+        }
+      } catch (error) {
+        console.log(error.message);
       }
-    }catch(error){  
-      console.log(error.message)
-    }
-    }
-    fetchUser()
-  },[])
+    };
+    fetchUser();
+  }, []);
 
-  return <UserContext.Provider value={{user,setUser}}>{children}</UserContext.Provider>
-}
+  return (
+    <UserContext.Provider value={{ user, setUser }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
 
 export const useUser = () => {
-  const context = useContext(UserContext)
+  const context = useContext(UserContext);
   if (context === undefined) {
-    throw new Error("useUser must be used within a UserProvider")
+    throw new Error("useUser must be used within a UserProvider");
   }
-  return context
-}
+  return context;
+};

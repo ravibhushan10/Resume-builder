@@ -1,46 +1,42 @@
-import { useUser } from "@/contexts/UserContext"
-import { ModeToggle } from "@/components/mode-toggle"
-import Login from "./Login"
-import Register from "./Register"
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage
-} from "@/components/ui/avatar"
+import { useUser } from "@/contexts/UserContext";
+import { ModeToggle } from "@/components/mode-toggle";
+import Login from "./Login";
+import Register from "./Register";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu"
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetTrigger
-} from "@/components/ui/sheet"
-import { toast } from "sonner"
-import { Link } from "react-router-dom"
-import { Menu } from "lucide-react"
-import { Button } from "../ui/button"
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { toast } from "sonner";
+import { Link } from "react-router-dom";
+import { Menu } from "lucide-react";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
-  const { user, setUser } = useUser()
+  const { user, setUser } = useUser();
 
   const handleLogout = async () => {
     try {
       await fetch(`${import.meta.env.VITE_SERVER_URL}/api/user/logout`, {
-        credentials: 'include'
-      })
-      setUser(null)
-      toast("Logout successful.")
+        credentials: "include",
+      });
+      setUser(null);
+      toast("Logout successful.");
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
-  }
+  };
 
   return (
     <header>
@@ -70,17 +66,19 @@ const Navbar = () => {
                       </Avatar>
                       <div>
                         <p className="font-medium">{user.name}</p>
-                        <p className="text-sm text-muted-foreground">{user.email}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {user.email}
+                        </p>
                       </div>
                     </div>
                     <li className="list-none">
                       <Link to="/profile" className="w-full">
-                    Profile
-                    </Link>
+                        Profile
+                      </Link>
                     </li>
-                   <li className="list-none" onClick={handleLogout}>
-                    Logout
-                   </li>
+                    <li className="list-none" onClick={handleLogout}>
+                      Logout
+                    </li>
                   </>
                 ) : (
                   <div className="w-3/4 mx-auto flex flex-col gap-5">
@@ -93,7 +91,6 @@ const Navbar = () => {
           </Sheet>
         </div>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-4">
           <ModeToggle />
           {user ? (
@@ -110,7 +107,9 @@ const Navbar = () => {
                 <DropdownMenuItem>
                   <Link to="/profile">Profile</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={handleLogout}>Logout</DropdownMenuItem>
+                <DropdownMenuItem onClick={handleLogout}>
+                  Logout
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
@@ -122,7 +121,7 @@ const Navbar = () => {
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

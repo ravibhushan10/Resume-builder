@@ -8,19 +8,19 @@ const userSchema = new Schema({
     type: String,
     required: true,
     maxlength: 50,
-    trim:true
+    trim: true
   },
-   email: {
+  email: {
     type: String,
     required: true,
-    unique:true
+    unique: true
   },
-   password: {
+  password: {
     type: String,
     required: true,
   },
-  
-},{versionKey:false,timestamps:true});
+
+}, { versionKey: false, timestamps: true });
 
 const User = model("User", userSchema)
 

@@ -1,26 +1,26 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { X } from 'lucide-react'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { X } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 const Step8 = ({ resume, setResume }) => {
   const addLanguage = (language) => {
-    const trimmed = language.trim()
+    const trimmed = language.trim();
     if (trimmed && !resume.languages.includes(trimmed)) {
-      setResume(prev => ({
+      setResume((prev) => ({
         ...prev,
-        languages: [...prev.languages, trimmed]
-      }))
+        languages: [...prev.languages, trimmed],
+      }));
     }
-  }
+  };
 
   const removeLanguage = (index) => {
-    setResume(prev => ({
+    setResume((prev) => ({
       ...prev,
-      languages: prev.languages.filter((_, i) => i !== index)
-    }))
-  }
+      languages: prev.languages.filter((_, i) => i !== index),
+    }));
+  };
 
   return (
     <Card>
@@ -30,7 +30,11 @@ const Step8 = ({ resume, setResume }) => {
       <CardContent className="space-y-4">
         <div className="flex flex-wrap gap-2 mb-4">
           {resume.languages.map((language, index) => (
-            <Badge key={index} variant="secondary" className="flex items-center gap-2">
+            <Badge
+              key={index}
+              variant="secondary"
+              className="flex items-center gap-2"
+            >
               {language}
               <Button onClick={() => removeLanguage(index)} size="xs">
                 <X className="h-3 w-3" />
@@ -42,9 +46,9 @@ const Step8 = ({ resume, setResume }) => {
           <Input
             placeholder="Add a language"
             onKeyPress={(e) => {
-              if (e.key === 'Enter') {
-                addLanguage(e.target.value)
-                e.target.value = ''
+              if (e.key === "Enter") {
+                addLanguage(e.target.value);
+                e.target.value = "";
               }
             }}
           />
@@ -52,9 +56,9 @@ const Step8 = ({ resume, setResume }) => {
             type="button"
             size="sm"
             onClick={(e) => {
-              const input = e.target.previousElementSibling
-              addLanguage(input.value)
-              input.value = ''
+              const input = e.target.previousElementSibling;
+              addLanguage(input.value);
+              input.value = "";
             }}
           >
             Add
@@ -62,7 +66,7 @@ const Step8 = ({ resume, setResume }) => {
         </div>
       </CardContent>
     </Card>
-  )
-}
+  );
+};
 
-export default Step8
+export default Step8;

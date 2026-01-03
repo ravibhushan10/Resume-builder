@@ -9,17 +9,17 @@ const resumeSchema = new mongoose.Schema({
     },
     fullName: {
         type: String,
-        default:""
+        default: ""
     },
-    role:{
-        type:String,
-        default:""
+    role: {
+        type: String,
+        default: ""
     },
 
     title: {
         type: String,
         required: true,
-        trim:true
+        trim: true
     },
 
     contact: {
@@ -33,40 +33,40 @@ const resumeSchema = new mongoose.Schema({
 
     summary: {
         type: String,
-        default:""
+        default: ""
     },
 
     skills: [String],
 
     education: [
         {
-            institution: { type: String},
+            institution: { type: String },
             degree: { type: String },
             startYear: { type: Number },
             endYear: { type: Number },
-            gpa:{type:Number},
-             _id:false
+            gpa: { type: Number },
+            _id: false
         },
     ],
 
     experience: [
         {
-            company: { type: String},
+            company: { type: String },
             role: { type: String },
             startDate: { type: Date },
             endDate: { type: Date },
             description: { type: String },
-            _id:false
+            _id: false
         },
     ],
     projects: [
         {
-            name: { type: String},
+            name: { type: String },
             description: { type: String },
             techStack: [String],
             github: { type: String },
             liveDemo: { type: String },
-             _id:false
+            _id: false
         },
     ],
 
@@ -76,7 +76,7 @@ const resumeSchema = new mongoose.Schema({
             issuer: String,
             year: String,
             link: { type: String },
-             _id:false
+            _id: false
         },
     ],
 

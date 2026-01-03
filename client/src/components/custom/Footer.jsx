@@ -1,13 +1,11 @@
-
-
 const Footer = () => {
-    return (
-        <footer className="border-t mt-auto py-6">
-            <div className="container mx-auto px-4 text-center text-sm">
-                © {new Date().getFullYear()} ResumeBuilder. Made by Ravibhushan.
-            </div>
-        </footer>
-    )
-}
+  return (
+    <footer className="border-t mt-auto py-6">
+      <div className="container mx-auto px-4 text-center text-sm">
+        © {new Date().getFullYear()} ResumeBuilder. Made by Ravibhushan.
+      </div>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;

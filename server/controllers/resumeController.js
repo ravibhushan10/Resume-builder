@@ -17,11 +17,11 @@ const compile = async function (templateName, data) {
 };
 
 hbs.registerHelper('formatDate', function (date) {
-    return moment(date).format('MMM YYYY'); // e.g., Jun 2023
+    return moment(date).format('MMM YYYY');
 });
 
 hbs.registerHelper('join', function (arr, sep) {
-  return Array.isArray(arr) ? arr.join(sep) : arr;
+    return Array.isArray(arr) ? arr.join(sep) : arr;
 });
 
 
@@ -80,7 +80,6 @@ const updateResume = asyncHandler(async (req, res) => {
         throw new CustomError("Resume not found.", 404)
     }
 
-    //merge updated resume value
     Object.assign(resume, req.body);
 
     const savedResume = await resume.save();
@@ -124,7 +123,6 @@ const generatePdf = asyncHandler(async (req, res) => {
         executablePath: './.puppeteer-cache/chrome/linux-137.0.7151.119/chrome-linux64/chrome'
     });
 
-    // const browser = await puppeteer.launch()
     const page = await browser.newPage();
 
     await page.setContent(content, { waitUntil: 'networkidle0' });
@@ -141,28 +139,23 @@ const generatePdf = asyncHandler(async (req, res) => {
 
     await browser.close();
 
-    // Upload to ImageKit
     const fileBuffer = await fs.readFile(pdfPath);
 
     const uploadResponse = await imagekit.upload({
-        file: fileBuffer,         // required
-        fileName: fileName,       // required
-        folder: "/resumes",       // optional
-        useUniqueFileName: true   // optional
+        file: fileBuffer,
+        fileName: fileName,
+        folder: "/resumes",
+        useUniqueFileName: true
     });
 
-    // Delete local PDF file
     await fs.unlink(pdfPath);
 
-    // Send response with uploaded file URL
     res.status(200).json({
         success: true,
         message: "PDF generated successfully.",
         url: uploadResponse.url
     });
 });
-
-
 
 module.exports = {
     createResume,

@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"
-import { Link } from "react-router-dom"
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 function NotFound() {
   return (
@@ -14,6 +14,6 @@ function NotFound() {
         <Link to="/">Go back home</Link>
       </Button>
     </div>
-  )
+  );
 }
-export default NotFound
+export default NotFound;

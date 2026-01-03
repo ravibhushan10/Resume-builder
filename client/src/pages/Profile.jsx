@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { toast } from "sonner"
-import CreateResume from "@/components/custom/CreateResume"
-import { useNavigate } from "react-router-dom"
-import { useResumeDialog } from "@/contexts/ResumeDialogContext"
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import CreateResume from "@/components/custom/CreateResume";
+import { useNavigate } from "react-router-dom";
+import { useResumeDialog } from "@/contexts/ResumeDialogContext";
 import {
   AlertDialog,
   AlertDialogTrigger,
@@ -14,71 +14,73 @@ import {
   AlertDialogFooter,
   AlertDialogCancel,
   AlertDialogAction,
-} from "@/components/ui/alert-dialog"
-import { useDispatch, useSelector } from "react-redux"
-import { deleteResume, setResumes } from "@/redux/slices/resumeSlice"
-import { Plus } from "lucide-react"
-import ResumeDownloadModal from "@/components/custom/ResumeDownloadModal"
-
-
+} from "@/components/ui/alert-dialog";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteResume, setResumes } from "@/redux/slices/resumeSlice";
+import { Plus } from "lucide-react";
+import ResumeDownloadModal from "@/components/custom/ResumeDownloadModal";
 
 function Profile() {
-  const { resumes } = useSelector(state => state.resume)
-  const [currResumeId,setCurrResumeId] = useState(null)
-  const [loading, setLoading] = useState(false)
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const { openDialog } = useResumeDialog()
+  const { resumes } = useSelector((state) => state.resume);
+  const [currResumeId, setCurrResumeId] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { openDialog } = useResumeDialog();
   const fetchResumes = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
       const res = await fetch(
         `${import.meta.env.VITE_SERVER_URL}/api/resumes`,
         {
-          credentials: "include"
+          credentials: "include",
         }
-      )
-      const data = await res.json()
-      if (!res.ok) throw new Error(data.message || "Failed to fetch resumes")
-      dispatch(setResumes(data))
+      );
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || "Failed to fetch resumes");
+      dispatch(setResumes(data));
     } catch (error) {
-      toast.error(error.message)
+      toast.error(error.message);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const handleDelete = async (resumeId) => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/resumes/${resumeId}`, {
-        method: "DELETE",
-        credentials: "include",
-      })
-      const data = await res.json()
-      if (!res.ok) throw new Error(data.message || "Delete failed")
-      toast.success(data.message)
-      dispatch(deleteResume(resumeId))
+      const res = await fetch(
+        `${import.meta.env.VITE_SERVER_URL}/api/resumes/${resumeId}`,
+        {
+          method: "DELETE",
+          credentials: "include",
+        }
+      );
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || "Delete failed");
+      toast.success(data.message);
+      dispatch(deleteResume(resumeId));
     } catch (error) {
-      toast.error(error.message)
+      toast.error(error.message);
     }
-  }
+  };
 
-
-  const handleEdit = resumeId => {
-    // Redirect or open resume builder page
-    navigate(`/resume/edit/${resumeId}`)
-  }
+  const handleEdit = (resumeId) => {
+    navigate(`/resume/edit/${resumeId}`);
+  };
 
   useEffect(() => {
-    fetchResumes()
-  }, [])
+    fetchResumes();
+  }, []);
 
   return (
     <section className="min-h-screen w-full">
       <div className="max-w-2xl mx-auto p-6">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-semibold">My Resumes</h1>
-          <Button onClick={openDialog}> <Plus/> Create New Resume</Button>
+          <Button onClick={openDialog}>
+            {" "}
+            <Plus /> Create New Resume
+          </Button>
         </div>
 
         {loading ? (
@@ -94,11 +96,14 @@ function Profile() {
               >
                 <span className="font-medium">{resume.title}</span>
                 <div className="flex gap-2">
-                  <Button onClick={() => handleEdit(resume._id)} size="sm" variant="outline">
+                  <Button
+                    onClick={() => handleEdit(resume._id)}
+                    size="sm"
+                    variant="outline"
+                  >
                     Edit
                   </Button>
 
-                  {/* ✅ AlertDialog for Delete */}
                   <AlertDialog>
                     <AlertDialogTrigger asChild>
                       <Button variant="destructive" size="sm">
@@ -109,7 +114,9 @@ function Profile() {
                       <AlertDialogHeader>
                         <AlertDialogTitle>Are you sure?</AlertDialogTitle>
                         <AlertDialogDescription>
-                          This action cannot be undone. This will permanently delete your resume titled <strong>{resume.title}</strong>.
+                          This action cannot be undone. This will permanently
+                          delete your resume titled{" "}
+                          <strong>{resume.title}</strong>.
                         </AlertDialogDescription>
                       </AlertDialogHeader>
                       <AlertDialogFooter>
@@ -123,23 +130,27 @@ function Profile() {
                       </AlertDialogFooter>
                     </AlertDialogContent>
                   </AlertDialog>
-                  <Button size={"sm"} onClick={()=>setCurrResumeId(resume._id)}>
+                  <Button
+                    size={"sm"}
+                    onClick={() => setCurrResumeId(resume._id)}
+                  >
                     View
                   </Button>
                 </div>
               </li>
             ))}
-
           </ul>
         )}
       </div>
       <CreateResume />
-      {
-         currResumeId && <ResumeDownloadModal resumeId={currResumeId} onClose={setCurrResumeId}/>
-      }
-      
+      {currResumeId && (
+        <ResumeDownloadModal
+          resumeId={currResumeId}
+          onClose={setCurrResumeId}
+        />
+      )}
     </section>
-  )
+  );
 }
 
-export default Profile
+export default Profile;

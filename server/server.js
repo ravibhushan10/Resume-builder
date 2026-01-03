@@ -13,19 +13,18 @@ connectDB()
 
 app.use(express.json())
 app.use(cors({
-  origin:process.env.ORIGIN,
-  credentials:true
+  origin: process.env.ORIGIN,
+  credentials: true
 }))
 
 app.use(cookieParser())
 
-app.get("/",(req,res)=>{
-  res.json({message:"Api working"})
+app.get("/", (req, res) => {
+  res.json({ message: "Api working" })
 })
 
-//routes
-app.use('/api/user',userRouter)
-app.use('/api/resumes',resumeRouter)
+app.use('/api/user', userRouter)
+app.use('/api/resumes', resumeRouter)
 app.use(errorHandler);
 
 app.listen(port, () => {

@@ -3,9 +3,9 @@ const { register, login, getUserProfile, logout } = require('../controllers/user
 const isAuth = require('../middlewares/authMiddleware');
 const userRouter = express.Router();
 
-userRouter.post("/register",register)
-userRouter.post("/login",login)
-userRouter.get("/profile",isAuth,getUserProfile)
-userRouter.get("/logout",isAuth,logout)
+userRouter.post("/register", register)
+userRouter.post("/login", login)
+userRouter.get("/profile", isAuth, getUserProfile)
+userRouter.get("/logout", isAuth, logout)
 
 module.exports = userRouter

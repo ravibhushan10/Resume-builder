@@ -1,6 +1,6 @@
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { toast } from "sonner"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 import {
   Dialog,
@@ -9,24 +9,23 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
-  DialogFooter
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { useUser } from "../../contexts/UserContext"
-
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useUser } from "../../contexts/UserContext";
 
 function Login() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [loading, setLoading] = useState(false)
-   const [open, setOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const { setUser } = useUser();
 
-  const handleSubmit = async(e) => {
-    e.preventDefault()
-    setLoading(true)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
 
     try {
       const res = await fetch(
@@ -34,26 +33,26 @@ function Login() {
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
-          credentials: "include", 
-          body: JSON.stringify({ email, password })
+          credentials: "include",
+          body: JSON.stringify({ email, password }),
         }
-      )
+      );
 
-      const data = await res.json()
+      const data = await res.json();
 
-      if (!res.ok) throw new Error(data.message || "Login failed")
+      if (!res.ok) throw new Error(data.message || "Login failed");
 
-      toast(data.message)
-      setUser(data.user)
-      setOpen(false)
+      toast(data.message);
+      setUser(data.user);
+      setOpen(false);
     } catch (error) {
-      toast(error.message)
+      toast(error.message);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <>
@@ -77,7 +76,7 @@ function Login() {
                   type="email"
                   placeholder="example@mail.com"
                   value={email}
-                  onChange={e => setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </div>
@@ -88,7 +87,7 @@ function Login() {
                   type="password"
                   placeholder="••••••••"
                   value={password}
-                  onChange={e => setPassword(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
                   required
                 />
               </div>
@@ -102,7 +101,7 @@ function Login() {
         </DialogContent>
       </Dialog>
     </>
-  )
+  );
 }
 
-export default Login
+export default Login;

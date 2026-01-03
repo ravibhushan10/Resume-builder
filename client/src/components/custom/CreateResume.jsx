@@ -1,69 +1,69 @@
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { toast } from "sonner"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogDescription,
-  DialogFooter
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { useUser } from "../../contexts/UserContext"
-import { useResumeDialog } from "../../contexts/ResumeDialogContext"
-import { useDispatch } from "react-redux"
-import { addResume } from "@/redux/slices/resumeSlice"
-import { useNavigate } from "react-router-dom"
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useUser } from "../../contexts/UserContext";
+import { useResumeDialog } from "../../contexts/ResumeDialogContext";
+import { useDispatch } from "react-redux";
+import { addResume } from "@/redux/slices/resumeSlice";
+import { useNavigate } from "react-router-dom";
 
 function CreateResume() {
-  const [title, setTitle] = useState("")
-  const [loading, setLoading] = useState(false)
-  const { user } = useUser()
-  const { open, closeDialog } = useResumeDialog()
-  const navigate = useNavigate()
+  const [title, setTitle] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { user } = useUser();
+  const { open, closeDialog } = useResumeDialog();
+  const navigate = useNavigate();
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const handleSubmit = async e => {
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     if (!user) {
-      return toast("Please login.")
+      return toast("Please login.");
     }
 
-    setLoading(true)
+    setLoading(true);
 
-    try {  
+    try {
       const res = await fetch(
         `${import.meta.env.VITE_SERVER_URL}/api/resumes/create`,
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
           credentials: "include",
-          body: JSON.stringify({ title })
+          body: JSON.stringify({ title }),
         }
-      )
+      );
 
-      const data = await res.json()
+      const data = await res.json();
 
-      if (!res.ok) throw new Error("Resume creation failed !")
+      if (!res.ok) throw new Error("Resume creation failed !");
 
-      dispatch(addResume(data))
+      dispatch(addResume(data));
 
-      toast.success("Resume created successfully.")
+      toast.success("Resume created successfully.");
 
-      closeDialog()
-      navigate(`/resume/edit/${data._id}`)
+      closeDialog();
+      navigate(`/resume/edit/${data._id}`);
     } catch (error) {
-      toast.error(error.message)
+      toast.error(error.message);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <Dialog open={open} onOpenChange={closeDialog}>
@@ -84,13 +84,11 @@ function CreateResume() {
                 type="text"
                 placeholder="Enter resume title"
                 value={title}
-                onChange={e => setTitle(e.target.value)}
+                onChange={(e) => setTitle(e.target.value)}
                 required
               />
             </div>
           </div>
-
-        
 
           <DialogFooter>
             <Button type="submit" disabled={loading}>
@@ -100,7 +98,7 @@ function CreateResume() {
         </form>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
 
-export default CreateResume
+export default CreateResume;
