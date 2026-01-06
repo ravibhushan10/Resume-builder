@@ -16,7 +16,6 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
       <em>Sign up section</em>
     </td>
   </tr>
-
   <tr>
     <td align="center">
       <img src="screenshots/second.png" ><br/>
@@ -27,7 +26,6 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
       <em>Toggle theme</em>
     </td>
   </tr>
-
   <tr>
     <td align="center">
       <img src="screenshots/fourth.png" ><br/>
@@ -38,7 +36,6 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
       <em>Download Resume</em>
     </td>
   </tr>
-  
 </table>
 
 
@@ -87,7 +84,7 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
 
 
 ## 🛠️ Technologies used
-   
+
 ###Frontend (Client)
 | Technology | Purpose | Version |
 |------------|---------|---------|
@@ -250,7 +247,7 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
    - Click **"Create pull request"**
    - Wait for review and be responsive to feedback
 
-   
+
 ## 👨‍💻 Author
 **Ravi Bhushan**
 - LinkedIn: [https://www.linkedin.com/in/ravibhushan-kumar-55b312344](https://www.linkedin.com/in/ravibhushan-kumar-55b312344/)
@@ -260,54 +257,13 @@ A modern, full-stack resume builder application with real-time preview, PDF expo
 
 ---
 <div align="center">
-   
+
 ### ⭐ Star this repository if it helped you!
 **Made with ❤️ by Ravi Bhushan**
-   
-   
+
+
 [Live Demo](https://resume-builder-ruby-omega.vercel.app/) · [Report Bug](https://github.com/ravibhushan10/Resume-builder/issues) · [Request Feature](https://github.com/ravibhushan10/Resume-builder/issues)
 
 </div>
 
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
